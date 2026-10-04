@@ -18,6 +18,7 @@ import Cart from './Cart/Cart'
 import SingleProd from './comp2/SingleProd';
 import WishList from './wishList/WishList'
 import CheckOut from './CheckOut/CheckOut'
+import Orders from './AllOrders.tsx/Orders'
   
 
 
@@ -33,6 +34,7 @@ const rou =createBrowserRouter([{
     {    path:'/cart' , element:<Cart />},
     {    path:'/wishlist' , element:<WishList />},
     {    path:'/checkOut/:idcart' , element:<CheckOut />},
+    {    path:'/allorders' , element:<Orders />},
 
 
 

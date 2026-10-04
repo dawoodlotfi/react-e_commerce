@@ -70,7 +70,7 @@ console.log('alls' ,ALLProd)
   <div className='flex flex-wrap w-[90%] m-auto pt-12'>
    
     {ALLProd?.map((prod)=> 
-    <div className=' w-1/2  md:w-1/3 lg:w-1/4 '>
+    <div className=' w-full sm:w-1/2 md:w-1/3 lg:w-1/4 '>
          <div className=' m-5 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 border border-gray-100 overflow-hidden'>
   
   {/* حافظت على w-5/6 m-auto، وضفت خلفية لطيفة وتأثير hover بسيط */}

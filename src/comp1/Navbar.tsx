@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Catagery from './../catagery/Catagery';
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { TokenContext } from "@/context/contextToken";
 import { useQuery } from "@tanstack/react-query";
 import { GetCart } from "@/Cart/GetCart";
@@ -41,7 +41,20 @@ export default function Navbar() {
        
    })
    console.log('dd',ItemsLove)
+   
+   ///////////
+  let  [open ,isopen]= useState(true)
+  function clickBtn(){
+    if(open == true){
+      isopen(false)
 
+    }
+     else if(open == false){
+      isopen(true)
+
+
+     }
+  }
   return (<>
   <div className="bg-chart-1 flex flex-wrap items-center justify-around fixed w-full z-10">
     <div className="flex ju items-center">
@@ -51,15 +64,24 @@ export default function Navbar() {
     <p className="text-3xl text-chart-3">Market Place</p>
 
     </div>
-    <div className="flex flex-wrap justify-around text-chart-3">
+    <div className="flex flex-wrap justify-around items-center text-chart-3">
+   
+      
+      {}
       {Token?<div>
       <Link className="mx-3" to='/products'>Products</Link>
+
      
       </div> : <div>
        <Link className="mx-3" to='/singup'>Sing Up</Link>
       <Link className="mx-3" to='/login'>login</Link>
        </div>}
        {/*                  cart           */}
+
+
+ 
+       
+
        {data?.numOfCartItems >0?<div>
          <Link to={'/cart'} >
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="text-chart-3 text-5xl size-9">
@@ -69,7 +91,10 @@ export default function Navbar() {
        </Link>
        </div> :null}
        {/*                 drop down            */}
-       <DropdownMenu>
+       <div className="hidden md:block">
+
+       
+       <DropdownMenu  >
       <DropdownMenuTrigger render={<Button variant="outline">Open</Button>} />
       <DropdownMenuContent>
         <DropdownMenuGroup>
@@ -87,7 +112,11 @@ export default function Navbar() {
         </div>
        </div>
           </DropdownMenuItem>
-          <DropdownMenuItem>orders</DropdownMenuItem>
+          <DropdownMenuItem>
+            <Link to={'/allorder'}>
+            orders
+            </Link>
+            </DropdownMenuItem>
           <DropdownMenuItem>
              {/*                logo out                */}
        {Token? <button onClick={LogOut} className="text-chart-5">log out</button>:null}
@@ -95,13 +124,12 @@ export default function Navbar() {
         </DropdownMenuGroup>
        
       </DropdownMenuContent>
-    </DropdownMenu>
-      
+     </DropdownMenu>
+      </div>
        
 
 
-      
-      
+    
       
       
 
@@ -109,8 +137,50 @@ export default function Navbar() {
     </div>
 
 
+  
+   <div className="block md:hidden">
 
+     <DropdownMenu  >
+      <DropdownMenuTrigger render={<Button variant="outline">
+         menu
+      </Button>} />
+      <DropdownMenuContent>
+        <DropdownMenuGroup>
+          <DropdownMenuLabel>My Account</DropdownMenuLabel>
+          <DropdownMenuItem>
+             {/*                 wishlist            */}
+       <div>
+        <div>
+          <Link to={'/wishlist'}>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="text-chart-3 size-4">
+           <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+          </svg> wishlist
+          </Link>
+
+        </div>
+       </div>
+          </DropdownMenuItem>
+          <DropdownMenuItem>
+            <Link to={'/allorder'}>
+            orders
+            </Link>
+            </DropdownMenuItem>
+          <DropdownMenuItem>
+             {/*                logo out                */}
+       {Token? <button onClick={LogOut} className="text-chart-5">log out</button>:null}
+          </DropdownMenuItem>
+        </DropdownMenuGroup>
+       
+      </DropdownMenuContent>
+     </DropdownMenu>
+
+   </div>
+   
+     
+     
+      
   </div>
+ 
   </>
   )
 }
