@@ -70,9 +70,8 @@ export default function Home() {
      
      <div className='m-4'>
 
-      <p className='block sm:hidden text-2xl text-center text-chart-1 font-bold'> shop now</p>
       
-  <div className="w-full hidden sm:block mx-auto overflow-x-hidden bg-chart-1">
+  <div className="w-full  mx-auto overflow-x-hidden bg-chart-1">
   <motion.div
     className="flex w-max whitespace-nowrap"
     animate={{ x: ["0%", "-50%"] }}
@@ -101,26 +100,7 @@ export default function Home() {
      </div>
        
     </div>
-    <div className='bg-chart-1'>
-         <p className='text-6xl text-center pb-5  text-chart-3'> Catagery</p>
-
-    <div className='flex flex-wrap'>
-    {ALLCate?.map((cat)=>
-
-    <div className='w-1/2 md:w-1/3  '  >
-    <div className='m-5 border-2 p-4 rounded-lg bg-white shadow'>
-
     
-      <img className='w-40 h-40 m-auto' src={cat.image} alt="" />
-      <p className='text-center text-chart-3 text-3xl'>{cat.name}</p>
-     
-     </div>
-    </div>
-    
-
-    )}
-    </div>
-    </div> 
     
      
             
