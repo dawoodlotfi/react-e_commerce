@@ -69,8 +69,10 @@ export default function Home() {
     </div>  
      
      <div className='m-4'>
+
+      <p className='block sm:hidden text-2xl text-center text-chart-1 font-bold'> shop now</p>
       
-  <div className="w-[90%] mx-auto overflow-x-hidden bg-chart-1">
+  <div className="w-full hidden sm:block mx-auto overflow-x-hidden bg-chart-1">
   <motion.div
     className="flex w-max whitespace-nowrap"
     animate={{ x: ["0%", "-50%"] }}
