@@ -96,7 +96,7 @@ export default function Cart() {
                 <p className='text-2xl text-chart-1 pl-3'>total Price :
                <span className='text-2xl text-chart-4'>{data?.data?.totalCartPrice} EGP</span></p>
                <Link 
-               className='pl-3 bg-chart-4 rounded-2xl my-4 text-center w-1/4 h-[40px]' 
+               className='pl-3 bg-chart-4 rounded-2xl my-4 text-center w-1/3 ' 
                to={`/checkOut/${data.cartId}`}>
               Check Out
               </Link>

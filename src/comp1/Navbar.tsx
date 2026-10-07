@@ -113,7 +113,7 @@ export default function Navbar() {
        </div>
           </DropdownMenuItem>
           <DropdownMenuItem>
-            <Link to={'/allorder'}>
+            <Link to={'/allorders'}>
             orders
             </Link>
             </DropdownMenuItem>
@@ -146,7 +146,7 @@ export default function Navbar() {
       </Button>} />
       <DropdownMenuContent>
         <DropdownMenuGroup>
-          <DropdownMenuLabel>My Account</DropdownMenuLabel>
+          
           <DropdownMenuItem>
              {/*                 wishlist            */}
        <div>
@@ -161,7 +161,7 @@ export default function Navbar() {
        </div>
           </DropdownMenuItem>
           <DropdownMenuItem>
-            <Link to={'/allorder'}>
+            <Link to={'/allorders'}>
             orders
             </Link>
             </DropdownMenuItem>

@@ -70,9 +70,9 @@ export default function Home() {
      
      <div className='m-4'>
       
-      <div className="w-full overflow-hidden bg-chart-1">
+  <div className="w-full overflow-x-hidden bg-chart-1">
   <motion.div
-    className="flex w-max flex-wrap justify-between"
+    className="flex w-max whitespace-nowrap"
     animate={{ x: ["0%", "-50%"] }}
     transition={{
       duration: 10,
@@ -81,14 +81,15 @@ export default function Home() {
     }}
   >
     <p className="text-chart-3 text-3xl px-8">
-      Shop Now   Shop Now   Shop Now   Shop Now
+      Shop Now&nbsp;&nbsp; Shop Now&nbsp;&nbsp; Shop Now&nbsp;&nbsp; Shop Now
     </p>
 
     <p className="text-chart-3 text-3xl px-8">
-      Shop Now   Shop Now   Shop Now   Shop Now
+      Shop Now&nbsp;&nbsp; Shop Now&nbsp;&nbsp; Shop Now&nbsp;&nbsp; Shop Now
     </p>
+
     <p className="text-chart-3 text-3xl px-8">
-      Shop Now   Shop Now   Shop Now   Shop Now
+      Shop Now&nbsp;&nbsp; Shop Now&nbsp;&nbsp; Shop Now&nbsp;&nbsp; Shop Now
     </p>
   </motion.div>
 </div>
@@ -107,10 +108,10 @@ export default function Home() {
     <div className='w-1/2 md:w-1/3  '  >
     <div className='m-5 border-2 p-4 rounded-lg bg-white shadow'>
 
-     <Link to={`/catagery/${cat._id}`}>
+    
       <img className='w-40 h-40 m-auto' src={cat.image} alt="" />
       <p className='text-center text-chart-3 text-3xl'>{cat.name}</p>
-      </Link>
+     
      </div>
     </div>
     
