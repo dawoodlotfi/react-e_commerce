@@ -68,11 +68,11 @@ export default function Navbar() {
    
       
       {}
-      {Token?<div>
+      {Token?<div className="hidden md:block">
       <Link className="mx-3" to='/products'>Products</Link>
 
      
-      </div> : <div>
+      </div> : <div className="hidden md:block">
        <Link className="mx-3" to='/singup'>Sing Up</Link>
       <Link className="mx-3" to='/login'>login</Link>
        </div>}
@@ -136,19 +136,29 @@ export default function Navbar() {
       
     </div>
 
-
+   
   
    <div className="block md:hidden">
 
      <DropdownMenu  >
-      <DropdownMenuTrigger render={<Button variant="outline">
-         menu
-      </Button>} />
+      <DropdownMenuTrigger
+       render={
+       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6 text-white">
+         <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
+           </svg>
+            } />
       <DropdownMenuContent>
-        <DropdownMenuGroup>
-          
+        <DropdownMenuGroup >
+
+           <DropdownMenuItem>
+             <Link to={'/products'}>
+             products
+              
+          </Link>
+           </DropdownMenuItem>
+          {/*                 wishlist            */}
           <DropdownMenuItem>
-             {/*                 wishlist            */}
+             
        <div>
         <div>
           <Link to={'/wishlist'}>
@@ -160,15 +170,29 @@ export default function Navbar() {
         </div>
        </div>
           </DropdownMenuItem>
+          {/*                 orders            */}
           <DropdownMenuItem>
             <Link to={'/allorders'}>
             orders
             </Link>
             </DropdownMenuItem>
+            {/*                 logout            */}
           <DropdownMenuItem>
+
              {/*                logo out                */}
        {Token? <button onClick={LogOut} className="text-chart-5">log out</button>:null}
           </DropdownMenuItem>
+
+           {/*                 sigin in            */}
+          
+
+            
+        {Token? null : <div >
+        <DropdownMenuItem> <Link className="" to='/singup'>Sing Up</Link></DropdownMenuItem>
+        <DropdownMenuItem> <Link className="" to='/login'>login</Link> </DropdownMenuItem>
+       </div>}
+          
+
         </DropdownMenuGroup>
        
       </DropdownMenuContent>

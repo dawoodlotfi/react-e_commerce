@@ -70,7 +70,7 @@ export default function Home() {
      
      <div className='m-4'>
       
-  <div className="w-full overflow-x-hidden bg-chart-1">
+  <div className="w-[90%] mx-auto overflow-x-hidden bg-chart-1">
   <motion.div
     className="flex w-max whitespace-nowrap"
     animate={{ x: ["0%", "-50%"] }}
