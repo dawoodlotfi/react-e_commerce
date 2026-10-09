@@ -19,6 +19,7 @@ import SingleProd from './comp2/SingleProd';
 import WishList from './wishList/WishList'
 import CheckOut from './CheckOut/CheckOut'
 import Orders from './AllOrders.tsx/Orders'
+import ProdectRout from './protectRout/ProdectRout'
   
 
 
@@ -31,10 +32,10 @@ const rou =createBrowserRouter([{
     {    path:'/singup' , element:<SiginIn />},
     {    path:'/login' , element:<Login />},
     {    path:'/productdetalis/:id' , element:<SingleProd />},
-    {    path:'/cart' , element:<Cart />},
-    {    path:'/wishlist' , element:<WishList />},
-    {    path:'/checkOut/:idcart' , element:<CheckOut />},
-    {    path:'/allorders' , element:<Orders />},
+    {    path:'/cart' , element:<ProdectRout> <Cart />  </ProdectRout>},
+    {    path:'/wishlist' , element: <ProdectRout><WishList /></ProdectRout>},
+    {    path:'/checkOut/:idcart' , element:<ProdectRout><CheckOut /></ProdectRout>},
+    {    path:'/allorders' , element:<ProdectRout><Orders /></ProdectRout>},
 
 
 
